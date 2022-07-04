@@ -1,0 +1,24 @@
+{
+  "name": "node-projects",
+  "version": "1.0.0",
+  "description": "NodeJs practice projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedantyetekar7/node-projects.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Vedant Yetekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vedantyetekar7/node-projects/issues"
+  },
+  "homepage": "https://github.com/vedantyetekar7/node-projects#readme"
+}
