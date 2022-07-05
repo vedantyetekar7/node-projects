@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/vedantyetekar7/node-projects/issues"
   },
-  "homepage": "https://github.com/vedantyetekar7/node-projects#readme"
+  "homepage": "https://github.com/vedantyetekar7/node-projects#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
 }
