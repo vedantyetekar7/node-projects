@@ -1,26 +1,28 @@
 {
-  "name": "projects",
+  "name": "express-form-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A form created using express framework.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vedantyetekar7/node-projects.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "mern"
+  ],
+  "author": "Vedant Yetekar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vedantyetekar7/node-projects/issues"
   },
   "homepage": "https://github.com/vedantyetekar7/node-projects#readme",
   "dependencies": {
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "pug": "^3.0.2"
+    "express": "^4.18.1"
   }
 }
