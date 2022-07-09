@@ -18,10 +18,12 @@
   "author": "Vedant Yetekar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vedantyetekar7/node-projects/issues"
+    "url": "https://github.com/vedantyetekar7/node-projects/"
   },
   "homepage": "https://github.com/vedantyetekar7/node-projects#readme",
   "dependencies": {
-    "axios": "^0.27.2"
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3"
   }
 }

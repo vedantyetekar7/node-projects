@@ -1,3 +1,4 @@
+/*
 // declaring and printing variables
 const a = 10;
 const b = 20;
@@ -57,9 +58,9 @@ promise.then(
     getAfter();
   },
   (error) => console.log(error)
-);
+  );
 
-const getAfter = () => {
+  const getAfter = () => {
   console.log("RUN AFTER");
 };
 
@@ -104,8 +105,8 @@ const hostname = "127.0.0.1";
 const port = 5000;
 
 http
-  .createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "text/plain" });
+.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
     res.write("<h1>Hello</h1>");
     res.end();
   })
@@ -171,8 +172,8 @@ axios
     console.log(`Body: ${JSON.stringify(res.data)}`);
   })
   .catch((error) => console.log(error));
-
-// working with files
+  
+  // working with files
 const fs = require("fs");
 
 // reading file asynchronously.
@@ -259,7 +260,7 @@ const about = (req, res) => {
 };
 
 http
-  .createServer((req, res) => {
+.createServer((req, res) => {
     if (req.url == "/") {
       return index(req, res);
     }
@@ -269,10 +270,10 @@ http
     }
   })
   .listen(5000);
-
-// refactored the routing code
-
-const http = require("http");
+  
+  // refactored the routing code
+  
+  const http = require("http");
 
 const routes = {
   "/": (req, res) => {
@@ -280,7 +281,7 @@ const routes = {
     res.write("<h1>Welcome to the homepage.</h1>");
     res.end();
   },
-
+  
   "/about": (req, res) => {
     res.writeHead(200);
     res.write("<h1>Hello, I'm Vedant Yetekar.</h1>");
@@ -296,7 +297,7 @@ http
   })
   .listen(process.env.PORT || 5000);
 
-// path module
+  // path module
 const path = require("path");
 
 const lastName = path.basename("test.json");
@@ -350,15 +351,15 @@ event.off("my_event", (cnt) => {
 http
   .createServer((req, res) => {
     if (req.url in routes) return routes[req.url](req, res);
-
+    
     cnt++;
     event.emit("my_event", cnt);
     event.emit("event_once");
   })
   .listen(process.env.PORT || 5000);
 
-// stream: used when files are too big.
-const http = require("http");
+  // stream: used when files are too big.
+  const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer((req, res) => {
@@ -412,7 +413,7 @@ doSomething1()
     });
   })
   .catch((error) => console.log(error));
-
+  
 // handling errors in async await functions
 const handleError = async () => {
   try {
@@ -421,3 +422,86 @@ const handleError = async () => {
     console.log(error);
   }
 };
+
+// sessions
+const express = require("express");
+const session = require("express-session");
+const app = express();
+
+const PORT = process.env.PORT || 5000;
+app.use(
+  session({
+    secret: "test",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+app.get("/", (req, res) => {
+  req.session.name = "Vedant";
+  res.send(`<h1>Session Set</h1>
+  <a href="/session">Go To Session</a>
+  `);
+});
+
+app.get("/session", (req, res) => {
+  const name = req.session.name;
+  console.log(req.session);
+  res.send(`<h1>${name}</h1>
+  <a href="/destroy">Destroy Session</a>`);
+});
+
+app.get("/destroy", (req, res) => {
+  req.session.destroy((error) => {
+    console.log(`Session destroyed.`);
+  });
+  
+  res.send("<h1>Session Destroyed</h1>");
+  res.end();
+});
+
+app.listen(PORT, () =>
+console.log(`Server running at port http://localhost:${PORT}/`)
+);
+
+
+// cookies
+const express = require("express");
+const app = express();
+const cookies = require("cookie-parser");
+
+const PORT = process.env.PORT || 5000;
+
+app.use(cookies());
+
+let userData = {
+  name: "Vedant Yetekar",
+  Age: 19,
+};
+
+app.get("/", (req, res) => {
+  res.send("Cookies Tutorial");
+});
+
+app.get("/setuser", (req, res) => {
+  res.cookie("userData", userData);
+  res.send("User Data Added To Cookies.");
+});
+
+app.get("/getuser", (req, res) => {
+  res.send(req.cookies);
+  // res.send(req.cookies.userData);
+  // res.send(req.cookies.userData.name);
+  // res.send(req.cookies.userData.age);
+});
+
+app.get("/logout", (req, res) => {
+  res.clearCookie("userData");
+  res.send("User logged out successfully.");
+});
+
+app.listen(PORT, () =>
+  console.log(`Server running at port http://localhost:${PORT}/`)
+);
+
+*/
