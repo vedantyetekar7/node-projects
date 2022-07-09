@@ -16,14 +16,10 @@ body {
   margin-top: 1.5em;
 }
 
-.password {
-  margin-top: 1.5em;
-}
-
 form {
-  padding: 0.3em;
+  padding: 0 3em;
 }
 
-#login .title span {
+#login .title > span {
   font-size: 0.8em;
 }
