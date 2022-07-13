@@ -7,7 +7,7 @@ const connectDB = require("./server/database/connection");
 
 const app = express();
 
-dotenv.config({ path: "config.env" });
+dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 // log requests
@@ -32,5 +32,5 @@ app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 app.use("/", require("./server/routes/router"));
 
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}/`);
 });
